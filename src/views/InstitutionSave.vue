@@ -1,6 +1,6 @@
 <template>
-  <form novalidate @submit.stop.prevent="showSnackbar = true">
-    <div>
+  <form class="md-layout md-gutter" novalidate @submit.stop.prevent="showSnackbar = true">
+    <div  class="md-layout-item">
       <md-field>
         <label>Nome</label>
         <md-input v-model="instituicao.nome"></md-input>
@@ -49,3 +49,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.md-layout-item {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+</style>
