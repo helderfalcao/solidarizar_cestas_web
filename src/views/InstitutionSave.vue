@@ -3,17 +3,17 @@
     <div>
       <md-field>
         <label>Nome</label>
-        <md-input v-model="name"></md-input>
+        <md-input v-model="instituicao.nome"></md-input>
       </md-field>
 
       <md-field>
         <label>Descrição</label>
-        <md-input v-model="description"></md-input>
+        <md-input v-model="instituicao.descricao"></md-input>
       </md-field>
 
       <md-field>
         <label>Responsável</label>
-        <md-input v-model="responsible"></md-input>
+        <md-input v-model="instituicao.responsavel"></md-input>
       </md-field>
       <md-button type="submit" class="md-fab md-primary" v-on:click="save()">
         <md-icon>add</md-icon>
@@ -31,9 +31,9 @@ export default {
     return {
       showSnackbar: false,
       instituicao: {
-        name: null,
-        description: null,
-        responsible: null,
+        nome: null,
+        descricao: null,
+        responsavel: null,
       },
     };
   },
