@@ -24,6 +24,8 @@
 
 <script>
 import axios from "axios";
+import Config from "../source/Config"
+
 
 export default {
   name: "InstitutionSave",
@@ -41,7 +43,7 @@ export default {
     save () {
       const instituicao = this.instituicao;
       axios
-        .post("http://www.helderfalcao.com.br/instituicoes", instituicao)
+        .post(`${Config.API_URL + 'instituicoes'}`, instituicao)
         .then((response) => {
           console.log(response);
         });

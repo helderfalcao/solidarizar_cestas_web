@@ -11,19 +11,19 @@ import axios from "axios";
 import Config from "../source/Config"
 
 export default {
-  name: "ReceptorSave",
+  name: "DonateSave",
   data: () => {
     return {
       showSnackbar: false,
-      receptor: {
+      doacao: {
       },
     };
   },
   methods: {
     save () {
-      const receptor = this.receptor;
+      const doacao = this.doacao;
       axios
-        .post(`${Config.API_URL + 'receptores'}`, receptor)
+        .post(`${Config.API_URL + 'doacoes'}`, doacao)
         .then((response) => {
           console.log(response);
         });

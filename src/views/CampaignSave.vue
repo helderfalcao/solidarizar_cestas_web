@@ -11,19 +11,19 @@ import axios from "axios";
 import Config from "../source/Config"
 
 export default {
-  name: "ReceptorSave",
+  name: "CampaignSave",
   data: () => {
     return {
       showSnackbar: false,
-      receptor: {
+      campanha: {
       },
     };
   },
   methods: {
     save () {
-      const receptor = this.receptor;
+      const campanha = this.campanha;
       axios
-        .post(`${Config.API_URL + 'receptores'}`, receptor)
+        .post(`${Config.API_URL + 'campanhas'}`, campanha)
         .then((response) => {
           console.log(response);
         });

@@ -11,19 +11,19 @@ import axios from "axios";
 import Config from "../source/Config"
 
 export default {
-  name: "ReceptorSave",
+  name: "FamilySave",
   data: () => {
     return {
       showSnackbar: false,
-      receptor: {
+      familia: {
       },
     };
   },
   methods: {
     save () {
-      const receptor = this.receptor;
+      const familia = this.familia;
       axios
-        .post(`${Config.API_URL + 'receptores'}`, receptor)
+        .post(`${Config.API_URL + 'familias'}`, familia)
         .then((response) => {
           console.log(response);
         });

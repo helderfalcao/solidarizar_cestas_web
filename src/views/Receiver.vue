@@ -11,7 +11,7 @@ import axios from "axios";
 import Config from "../source/Config"
 
 export default {
-  name: "ReceptorSave",
+  name: "ReceiverSave",
   data: () => {
     return {
       showSnackbar: false,
@@ -23,7 +23,7 @@ export default {
     save () {
       const receptor = this.receptor;
       axios
-        .post(`${Config.API_URL + 'receptores'}`, receptor)
+        .post(`${Config.API_URL + 'receptores'}`, produto)
         .then((response) => {
           console.log(response);
         });
