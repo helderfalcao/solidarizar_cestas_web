@@ -24,8 +24,6 @@
 
 <script>
 import axios from "axios";
-import Vue from "vue";
-
 
 export default {
   name: "InstitutionSave",
@@ -43,7 +41,7 @@ export default {
     save () {
       const instituicao = this.instituicao;
       axios
-        .post(`${Vue.config.publicPath + 'instituicoes'}`, instituicao)
+        .post(`${process.env.VUE_APP_URL + 'instituicoes'}`, instituicao)
         .then((response) => {
           console.log(response);
         });

@@ -8,7 +8,6 @@
 
 <script>
 import axios from "axios";
-import Vue from "vue";
 
 export default {
   name: "FamilySave",
@@ -23,7 +22,7 @@ export default {
     save () {
       const familia = this.familia;
       axios
-        .post(`${Vue.config.publicPath + 'familias'}`, familia)
+        .post(`${process.env.VUE_APP_URL + 'familias'}`, familia)
         .then((response) => {
           console.log(response);
         });

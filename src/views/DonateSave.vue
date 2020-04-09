@@ -8,7 +8,6 @@
 
 <script>
 import axios from "axios";
-import Vue from "vue";
 
 export default {
   name: "DonateSave",
@@ -23,7 +22,7 @@ export default {
     save () {
       const doacao = this.doacao;
       axios
-        .post(`${Vue.config.publicPath + 'doacoes'}`, doacao)
+        .post(`${process.env.VUE_APP_URL + 'doacoes'}`, doacao)
         .then((response) => {
           console.log(response);
         });
