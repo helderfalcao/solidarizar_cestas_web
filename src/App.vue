@@ -1,23 +1,23 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/institution">Institution</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
 <script>
 
 import Vue from "vue";
-import { MdButton, MdField, MdSnackbar } from "vue-material/dist/components";
+import { MdButton, MdField, MdSnackbar, MdApp, MdToolbar, MdDrawer, MdContent, MdAvatar } from "vue-material/dist/components";
 import 'vue-material/dist/vue-material.min.css'
 import 'vue-material/dist/theme/default.css'
 
 Vue.use(MdButton)
 Vue.use(MdField)
 Vue.use(MdSnackbar)
+Vue.use(MdApp)
+Vue.use(MdToolbar)
+Vue.use(MdDrawer)
+Vue.use(MdContent)
+Vue.use(MdAvatar)
 
 export default {
   

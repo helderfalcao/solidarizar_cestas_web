@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import InstitutionSave from '../views/InstitutionSave.vue'
+import DonateSave from '../views/DonateSave.vue'
 
 Vue.use(VueRouter)
 
@@ -24,6 +25,11 @@ Vue.use(VueRouter)
     name: 'Institution',
     component: InstitutionSave
   },
+  {
+    path: '/donate',
+    name: 'Donate',
+    component: DonateSave
+  }
 ]
 
 const router = new VueRouter({
