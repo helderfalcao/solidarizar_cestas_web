@@ -8,7 +8,7 @@
 
 <script>
 import axios from "axios";
-import Config from "../source/Config"
+import Vue from "vue";
 
 export default {
   name: "CampaignSave",
@@ -23,7 +23,7 @@ export default {
     save () {
       const campanha = this.campanha;
       axios
-        .post(`${Config.API_URL + 'campanhas'}`, campanha)
+        .post(`${Vue.config.publicPath + 'campanhas'}`, campanha)
         .then((response) => {
           console.log(response);
         });

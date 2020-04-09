@@ -24,7 +24,7 @@
 
 <script>
 import axios from "axios";
-import Config from "../source/Config"
+import Vue from "vue";
 
 
 export default {
@@ -43,7 +43,7 @@ export default {
     save () {
       const instituicao = this.instituicao;
       axios
-        .post(`${Config.API_URL + 'instituicoes'}`, instituicao)
+        .post(`${Vue.config.publicPath + 'instituicoes'}`, instituicao)
         .then((response) => {
           console.log(response);
         });

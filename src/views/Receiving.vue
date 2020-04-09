@@ -8,7 +8,7 @@
 
 <script>
 import axios from "axios";
-import Config from "../source/Config"
+import Vue from "vue";
 
 export default {
   name: "ReceptorSave",
@@ -23,7 +23,7 @@ export default {
     save () {
       const receptor = this.receptor;
       axios
-        .post(`${Config.API_URL + 'receptores'}`, receptor)
+        .post(`${Vue.config.publicPath + 'receptores'}`, receptor)
         .then((response) => {
           console.log(response);
         });

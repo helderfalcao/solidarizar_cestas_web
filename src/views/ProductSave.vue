@@ -8,7 +8,7 @@
 
 <script>
 import axios from "axios";
-import Config from "../source/Config"
+import Vue from "vue";
 
 export default {
   name: "ProductSave",
@@ -23,7 +23,7 @@ export default {
     save () {
       const produto = this.produto;
       axios
-        .post(`${Config.API_URL + 'produtos'}`, produto)
+        .post(`${Vue.config.publicPath + 'produtos'}`, produto)
         .then((response) => {
           console.log(response);
         });
