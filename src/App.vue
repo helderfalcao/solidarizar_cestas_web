@@ -24,7 +24,9 @@ import {
   MdContent,
   MdAvatar,
   MdList,
-  MdBadge
+  MdBadge,
+  MdSteppers,
+  MdRadio
 } from "vue-material/dist/components";
 import "vue-material/dist/vue-material.min.css";
 import "vue-material/dist/theme/default.css";
@@ -39,6 +41,8 @@ Vue.use(MdContent);
 Vue.use(MdAvatar);
 Vue.use(MdList);
 Vue.use(MdBadge);
+Vue.use(MdSteppers);
+Vue.use(MdRadio);
 
 export default {};
 </script>

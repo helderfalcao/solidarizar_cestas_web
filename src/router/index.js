@@ -23,7 +23,7 @@ Vue.use(VueRouter)
     path: '/donate',
     name: 'Donate',
     component: DonateSave,
-    meta: { title: 'Campanhas' }
+    meta: { title: 'Faça sua doação' }
   }
 ]
 
