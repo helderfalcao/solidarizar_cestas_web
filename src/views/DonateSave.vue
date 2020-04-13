@@ -32,7 +32,7 @@
 
         <md-step
           id="second"
-          md-label="Escolha oq gostaria de doar"
+          md-label="Escolha o que gostaria de doar"
           :md-error="secondStepError"
           :md-editable="false"
           :md-done.sync="second"
