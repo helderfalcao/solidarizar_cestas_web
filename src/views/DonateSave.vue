@@ -26,7 +26,7 @@
           <md-button
             class="md-raised md-primary"
             @click="setDone('first', 'second')"
-            >Continue</md-button
+            >Já escolhi a campanha</md-button
           >
         </md-step>
 
@@ -56,7 +56,7 @@
           <md-button
             class="md-raised md-primary"
             @click="setDone('second', 'third')"
-            >Continue</md-button
+            >Já escolhi oq doar</md-button
           >
         </md-step>
 
@@ -72,7 +72,7 @@
           <md-button
             class="md-raised md-primary"
             @click="setDone('third', 'fourth')"
-            >Continue</md-button
+            >Este é o melhor lugar e data para deixar minha doação</md-button
           >
         </md-step>
         <md-step
@@ -85,7 +85,7 @@
             c
           </p>
           <md-button class="md-raised md-primary" @click="setDone('fourth')"
-            >Realizar doação</md-button
+            >Posso contribuir </md-button
           >
         </md-step>
       </md-steppers>
