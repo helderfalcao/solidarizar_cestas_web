@@ -1,27 +1,46 @@
 <template>
   <div id="app">
-    <router-view/>
+    <div class="page-container">
+      <md-app>
+        <md-app-toolbar class="md-primary">
+          <span class="md-title">{{$route.meta.title}}</span>
+        </md-app-toolbar>
+        <md-app-content>
+          <router-view />
+        </md-app-content>
+      </md-app>
+    </div>
   </div>
 </template>
 <script>
-
 import Vue from "vue";
-import { MdButton, MdField, MdSnackbar, MdApp, MdToolbar, MdDrawer, MdContent, MdAvatar } from "vue-material/dist/components";
-import 'vue-material/dist/vue-material.min.css'
-import 'vue-material/dist/theme/default.css'
+import {
+  MdButton,
+  MdField,
+  MdSnackbar,
+  MdApp,
+  MdToolbar,
+  MdDrawer,
+  MdContent,
+  MdAvatar,
+  MdList,
+  MdBadge
+} from "vue-material/dist/components";
+import "vue-material/dist/vue-material.min.css";
+import "vue-material/dist/theme/default.css";
 
-Vue.use(MdButton)
-Vue.use(MdField)
-Vue.use(MdSnackbar)
-Vue.use(MdApp)
-Vue.use(MdToolbar)
-Vue.use(MdDrawer)
-Vue.use(MdContent)
-Vue.use(MdAvatar)
+Vue.use(MdButton);
+Vue.use(MdField);
+Vue.use(MdSnackbar);
+Vue.use(MdApp);
+Vue.use(MdToolbar);
+Vue.use(MdDrawer);
+Vue.use(MdContent);
+Vue.use(MdAvatar);
+Vue.use(MdList);
+Vue.use(MdBadge);
 
-export default {
-  
-}
+export default {};
 </script>
 
 <style>
