@@ -1,6 +1,6 @@
 <template>
   <div class="page-container home">
-    <img class="logo" alt="Solidarizar Cestas" src="../assets/help.jpg" />
+    <img class="logo" alt="Solidarizar Cestas" src="../assets/solidarizar.jpeg" />
     <md-app>
       <md-app-content>
         <p>Muitos precisam, aqui muitos podem ajudar :).</p>
@@ -20,7 +20,7 @@ export default {
 
 <style lang="scss" scoped>
 .logo {
-  height: 200px;
+  height: 300px;
 }
 .md-app {
   max-height: 400px;
