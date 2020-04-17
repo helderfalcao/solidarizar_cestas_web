@@ -13,16 +13,8 @@
           :md-editable="false"
           :md-done.sync="first"
         >
-          <p>
-            <md-radio v-model="radio" value="accent">
-              <span class="md-list-item-text">Campanha</span>
-              <small>Instituição</small></md-radio
-            >
-            <md-radio v-model="radio" value="test">
-              <span class="md-list-item-text">Campanha 2</span>
-              <small>Instituição 2</small></md-radio
-            >
-          </p>
+          <DonateCampaign msg="Campanha"/>
+
           <md-button
             class="md-raised md-primary"
             @click="setDone('first', 'second')"
@@ -38,7 +30,11 @@
           :md-done.sync="second"
         >
           <p>
-            <md-list-item v-for="item in products" :key="item._id" class="product-item">
+            <md-list-item
+              v-for="item in products"
+              :key="item._id"
+              class="product-item"
+            >
               <span>
                 <md-avatar class="md-avatar-icon">
                   <img v-bind:src="item.imagem" alt="Avatar" />
@@ -85,8 +81,8 @@
             c
           </p>
           <md-button class="md-raised md-primary" @click="setDone('fourth')"
-            >Posso contribuir </md-button
-          >
+            >Posso contribuir
+          </md-button>
         </md-step>
       </md-steppers>
 
@@ -97,6 +93,7 @@
 
 <script>
 import axios from "axios";
+import DonateCampaign from '@/components/DonateCampaign.vue';
 
 export default {
   name: "DonateSave",
@@ -111,20 +108,23 @@ export default {
       first: false,
       second: false,
       third: false,
-      secondStepError: null
+      secondStepError: null,
     };
   },
   mounted() {
-    axios.get(`${process.env.VUE_APP_URL + "produtos"}`).then(response => {
+    axios.get(`${process.env.VUE_APP_URL + "produtos"}`).then((response) => {
       this.products = response.data;
     });
+  },
+  components: {
+    DonateCampaign,
   },
   methods: {
     save() {
       const doacao = this.doacao;
       axios
         .post(`${process.env.VUE_APP_URL + "doacoes"}`, doacao)
-        .then(response => {
+        .then((response) => {
           console.log(response);
         });
     },
@@ -139,8 +139,8 @@ export default {
     },
     setError() {
       this.secondStepError = "This is an error!";
-    }
-  }
+    },
+  },
 };
 </script>
 
