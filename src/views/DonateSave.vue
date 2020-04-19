@@ -13,7 +13,7 @@
           :md-editable="false"
           :md-done.sync="first"
         >
-          <DonateCampaign msg="Campanha"/>
+          <DonateCampaign :callback="escolhaCampanha"/>
 
           <md-button
             class="md-raised md-primary"
@@ -100,6 +100,10 @@ export default {
     DonateConfirmation
   },
   methods: {
+    escolhaCampanha(idCampanha) {
+      this.doacao.campanha = idCampanha;
+      this.setDone('first', 'second')
+    },
     save() {
       const doacao = this.doacao;
       axios
