@@ -33,12 +33,7 @@
           :md-editable="true"
           :md-done.sync="third"
         >
-          <DonateChoosePlace  campaign="Escolha campanha"/>
-          <md-button
-            class="md-raised md-primary"
-            @click="setDone('third', 'fourth')"
-            >Este é o melhor lugar e data para deixar minha doação</md-button
-          >
+          <DonateChoosePlace  :callback="escolherLugar"/>
         </md-step>
         <md-step
           id="fourth"
@@ -79,6 +74,7 @@ export default {
       first: false,
       second: false,
       third: false,
+      fourth: false,
       secondStepError: null,
     };
   },
@@ -96,6 +92,11 @@ export default {
     escolhaProdutos(produtos) {
       this.doacao.produtos = produtos;
       this.setDone('second', 'third')
+    },
+    escolherLugar(lugar, dia) {
+      this.doacao.receptor = lugar;
+      this.doacao.dia = dia;
+      this.setDone('third', 'fourth');
     },
     save() {
       const doacao = this.doacao;

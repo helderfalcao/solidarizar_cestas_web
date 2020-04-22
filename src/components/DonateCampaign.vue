@@ -64,8 +64,8 @@ export default {
     getImgUrl(pet) {
       var images = require.context("../assets/", false, /\.jpg$/);
       return images("./" + pet);
-    },
-  },
+    }
+  }
 };
 </script>
 
