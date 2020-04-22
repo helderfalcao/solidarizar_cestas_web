@@ -16,8 +16,14 @@
         </md-chip>
       </div>
       <div class="md-layout-item md-size-33">
-        <h2>Local e data</h2>
-        <label>{{ dateFormated() }}</label>
+        <h2>Data</h2>
+        <label>Dia: {{ dateFormated }}</label>
+        <h2>Local</h2>
+        <label>Local: {{ donation.receptor.nome }}</label>
+        <br />
+        <label>Endereço: {{ donation.receptor.endereco }}</label>
+        <br />
+        <label>Responsável: {{ donation.receptor.responsavel }}</label>
       </div>
       <div class="md-layout-item md-size-33"></div>
     </div>
@@ -29,7 +35,7 @@
 </template>
 
 <script>
-//import format from 'date-fns/format'
+import format from "date-fns/format";
 
 export default {
   name: "DonateConfirmation",
@@ -40,14 +46,10 @@ export default {
     productsMap: new Map(),
     dia: null,
     donation: {},
+    dateFormated: "",
   }),
-  methods: {
-    dateFormated: () => {
-      if (this) {
-        return this.$props.donation.dia;
-      }
-      return "";
-    },
+  mounted() {
+    this.dateFormated = format(this.donation.dia, "dd/MM/yyyy");
   },
 };
 </script>
