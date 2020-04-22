@@ -20,7 +20,7 @@
           </md-card-content>
 
           <md-card-actions>
-            <md-button @click="callback(item._id, dia)">Escolher local</md-button>
+            <md-button @click="callback(item, dia)">Escolher local</md-button>
           </md-card-actions>
         </md-card>
       </div>
@@ -68,8 +68,8 @@ export default {
         return images("./" + pet);
       }
       return images("./help.jpg");
-    },
-  },
+    }
+  }
 };
 </script>
 

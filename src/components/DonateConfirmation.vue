@@ -1,25 +1,54 @@
 <template>
-  <div class="hello">
-    <h1>{{ campaign }}</h1>
-    <p>
-      <md-radio v-model="radio" value="accent">
-        <span class="md-list-item-text">Campanha</span>
-        <small>Instituição</small>
-        </md-radio>
-      <md-radio v-model="radio" value="test">
-        <span class="md-list-item-text">Campanha 2</span>
-        <small>Instituição 2</small></md-radio
-      >
-    </p>
+  <div>
+    <div class="md-layout md-gutter ">
+      <div class="md-layout-item md-size-100">
+        <h1>Sua doação</h1>
+      </div>
+      <div class="md-layout-item md-size-33">
+        <h2>Alimentos doados</h2>
+        <md-chip
+          class="md-primary"
+          v-for="item in donation.produtos"
+          :key="item._id"
+          v-bind:value="item._id"
+        >
+          {{ item.produto.nome }} ({{ item.quantidade }})
+        </md-chip>
+      </div>
+      <div class="md-layout-item md-size-33">
+        <h2>Local e data</h2>
+        <label>{{ dateFormated() }}</label>
+      </div>
+      <div class="md-layout-item md-size-33"></div>
+    </div>
+    <div class="md-layout md-gutter">
+      <md-divider></md-divider>
+      <div class="md-layout-item md-size-33"></div>
+    </div>
   </div>
 </template>
 
 <script>
+//import format from 'date-fns/format'
+
 export default {
   name: "DonateConfirmation",
   props: {
-    campaign: String,
-  }
+    donation: {},
+  },
+  data: () => ({
+    productsMap: new Map(),
+    dia: null,
+    donation: {},
+  }),
+  methods: {
+    dateFormated: () => {
+      if (this) {
+        return this.$props.donation.dia;
+      }
+      return "";
+    },
+  },
 };
 </script>
 

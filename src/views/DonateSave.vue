@@ -42,7 +42,7 @@
           :md-done.sync="fourth"
         >
           <p>
-            <DonateConfirmation campaign="Confirmation"/>
+            <DonateConfirmation v-if="doacao.receptor" :donation="doacao"/>
           </p>
           <md-button class="md-raised md-primary" @click="setDone('fourth')"
             >Posso contribuir
