@@ -14,37 +14,12 @@
 </template>
 <script>
 import Vue from "vue";
-import {
-  MdButton,
-  MdField,
-  MdSnackbar,
-  MdApp,
-  MdToolbar,
-  MdDrawer,
-  MdContent,
-  MdAvatar,
-  MdList,
-  MdBadge,
-  MdSteppers,
-  MdRadio,
-  MdCard
-} from "vue-material/dist/components";
+import VueMaterial from 'vue-material'
 import "vue-material/dist/vue-material.min.css";
 import "vue-material/dist/theme/default.css";
 
-Vue.use(MdButton);
-Vue.use(MdField);
-Vue.use(MdSnackbar);
-Vue.use(MdApp);
-Vue.use(MdToolbar);
-Vue.use(MdDrawer);
-Vue.use(MdContent);
-Vue.use(MdAvatar);
-Vue.use(MdList);
-Vue.use(MdBadge);
-Vue.use(MdSteppers);
-Vue.use(MdRadio);
-Vue.use(MdCard);
+Vue.use(VueMaterial);
+
 export default {};
 </script>
 

@@ -14,12 +14,6 @@
           :md-done.sync="first"
         >
           <DonateCampaign :callback="escolhaCampanha"/>
-
-          <md-button
-            class="md-raised md-primary"
-            @click="setDone('first', 'second')"
-            >Já escolhi a campanha</md-button
-          >
         </md-step>
 
         <md-step
@@ -29,13 +23,8 @@
           :md-editable="false"
           :md-done.sync="second"
         >
-        <DonateChooseProducts campaign="campaign" />
-         
-          <md-button
-            class="md-raised md-primary"
-            @click="setDone('second', 'third')"
-            >Já escolhi oq doar</md-button
-          >
+        <DonateChooseProducts :callback="escolhaProdutos" />
+        
         </md-step>
 
         <md-step
@@ -103,6 +92,10 @@ export default {
     escolhaCampanha(idCampanha) {
       this.doacao.campanha = idCampanha;
       this.setDone('first', 'second')
+    },
+    escolhaProdutos(produtos) {
+      this.doacao.produtos = produtos;
+      this.setDone('second', 'third')
     },
     save() {
       const doacao = this.doacao;

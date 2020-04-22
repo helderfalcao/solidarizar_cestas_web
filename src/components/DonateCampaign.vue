@@ -35,7 +35,7 @@ export default {
   name: "DonateCampaign",
   props: {
     msg: String,
-    callback: Function
+    callback: Function,
   },
 
   data() {
@@ -47,15 +47,17 @@ export default {
   },
   mounted() {
     const vm = this;
-    axios.get(`${process.env.VUE_APP_URL + "campanhas"}`).then((response) => {
-      this.campanhas = response.data;
-    });
     axios
       .get(`${process.env.VUE_APP_URL + "instituicoes"}`)
       .then((response) => {
-        response.data.map((instituicao) =>
-          vm.instituicoesMap.set(instituicao._id, instituicao.nome)
-        );
+        response.data.map((instituicao) => {
+          vm.instituicoesMap.set(instituicao._id, instituicao.nome);
+          axios
+            .get(`${process.env.VUE_APP_URL + "campanhas"}`)
+            .then((response) => {
+              this.campanhas = response.data;
+            });
+        });
       });
   },
   methods: {
@@ -71,4 +73,4 @@ export default {
 .md-card {
   max-width: 300px;
 }
-  </style>
+</style>
