@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import InstitutionSave from '../views/InstitutionSave.vue'
 import DonateSave from '../views/DonateSave.vue'
+import DonateSummary from '../views/DonateSummary.vue'
 
 Vue.use(VueRouter)
 
@@ -24,6 +25,12 @@ Vue.use(VueRouter)
     name: 'Donate',
     component: DonateSave,
     meta: { title: 'Faça sua doação' }
+  },
+  {
+    path: '/donateSummary',
+    name: 'DonateSummary',
+    component: DonateSummary,
+    meta: { title: 'Resumo das doações' }
   }
 ]
 

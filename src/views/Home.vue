@@ -6,7 +6,7 @@
         <p>Muitos precisam, aqui muitos podem ajudar :).</p>
         <router-link to="/donate">Doar</router-link>
         <p>Veja o quanto falta para atingirmos nossos objetivos.</p>
-        <router-link to="/donate">Campanhas</router-link>
+        <router-link to="/donateSummary">Campanhas</router-link>
       </md-app-content>
     </md-app>
   </div>
