@@ -55,6 +55,7 @@ export default {
       donationToServer.campanha = this.donation.campanha;
       donationToServer.receptor = this.donation.receptor._id;
       donationToServer.dia = format(this.donation.dia, "yyyy/MM/dd");
+      donationToServer.status = "Pendente";
       donationToServer.produtos = this.donation.produtos.map((prod) => {
         return { produto: prod.produto._id, quantidade: prod.quantidade }
       });
