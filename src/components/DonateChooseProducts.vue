@@ -10,7 +10,7 @@
               :key="item._id"
               v-bind:value="item._id"
             >
-              <span class="md-list-item-text">
+              &nbsp;<span class="md-list-item-text">
                 <md-avatar class="md-avatar-icon">
                   <img v-bind:src="item.imagem" alt="Avatar" />
                 </md-avatar>
@@ -59,7 +59,7 @@
       </md-list>
     </div>
     <md-button class="md-raised md-primary" @click="callback(donations)">
-      Já escolhi oq doar
+      Já escolhi o que doar
     </md-button>
   </div>
 </template>

@@ -13,7 +13,7 @@
           :md-editable="false"
           :md-done.sync="first"
         >
-          <DonateCampaign :callback="escolhaCampanha"/>
+          <DonateCampaign :callback="escolhaCampanha" />
         </md-step>
 
         <md-step
@@ -23,17 +23,16 @@
           :md-editable="false"
           :md-done.sync="second"
         >
-        <DonateChooseProducts :callback="escolhaProdutos" />
-        
+          <DonateChooseProducts :callback="escolhaProdutos" />
         </md-step>
 
         <md-step
           id="third"
           md-label="Escolha o lugar para deixar sua doação"
-          :md-editable="true"
+          :md-editable="false"
           :md-done.sync="third"
         >
-          <DonateChoosePlace  :callback="escolherLugar"/>
+          <DonateChoosePlace :callback="escolherLugar" />
         </md-step>
         <md-step
           id="fourth"
@@ -42,14 +41,10 @@
           :md-done.sync="fourth"
         >
           <p>
-            <DonateConfirmation v-if="doacao.receptor" :donation="doacao"/>
+            <DonateConfirmation v-if="doacao.receptor" :donation="doacao" />
           </p>
-          <md-button class="md-raised md-primary" @click="setDone('fourth')"
-            >Posso contribuir
-          </md-button>
         </md-step>
       </md-steppers>
-
       <md-list> </md-list>
     </div>
   </form>
@@ -57,10 +52,10 @@
 
 <script>
 import axios from "axios";
-import DonateCampaign from '@/components/DonateCampaign.vue';
-import DonateChooseProducts from '@/components/DonateChooseProducts.vue'
-import DonateChoosePlace from '@/components/DonateChoosePlace.vue'
-import DonateConfirmation from '@/components/DonateConfirmation.vue'
+import DonateCampaign from "@/components/DonateCampaign.vue";
+import DonateChooseProducts from "@/components/DonateChooseProducts.vue";
+import DonateChoosePlace from "@/components/DonateChoosePlace.vue";
+import DonateConfirmation from "@/components/DonateConfirmation.vue";
 
 export default {
   name: "DonateSave",
@@ -82,21 +77,21 @@ export default {
     DonateCampaign,
     DonateChooseProducts,
     DonateChoosePlace,
-    DonateConfirmation
+    DonateConfirmation,
   },
   methods: {
     escolhaCampanha(idCampanha) {
       this.doacao.campanha = idCampanha;
-      this.setDone('first', 'second')
+      this.setDone("first", "second");
     },
     escolhaProdutos(produtos) {
       this.doacao.produtos = produtos;
-      this.setDone('second', 'third')
+      this.setDone("second", "third");
     },
     escolherLugar(lugar, dia) {
       this.doacao.receptor = lugar;
       this.doacao.dia = dia;
-      this.setDone('third', 'fourth');
+      this.setDone("third", "fourth");
     },
     save() {
       const doacao = this.doacao;

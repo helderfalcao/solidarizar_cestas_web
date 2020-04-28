@@ -27,14 +27,15 @@
       </div>
       <div class="md-layout-item md-size-33"></div>
     </div>
-    <div class="md-layout md-gutter">
-      <md-divider></md-divider>
-      <div class="md-layout-item md-size-33"></div>
-    </div>
+    <md-divider class="confirmation-divider"></md-divider>
+    <md-button class="md-raised md-primary" @click="confirmDonation()">
+      Posso contribuir
+    </md-button>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 import format from "date-fns/format";
 
 export default {
@@ -48,10 +49,28 @@ export default {
     donation: {},
     dateFormated: "",
   }),
+  methods: {
+    confirmDonation() {
+      const donationToServer = {};
+      donationToServer.campanha = this.donation.campanha;
+      donationToServer.receptor = this.donation.receptor._id;
+      donationToServer.dia = format(this.donation.dia, "yyyy/MM/dd");
+      donationToServer.produtos = this.donation.produtos.map((prod) => {
+        return { produto: prod.produto._id, quantidade: prod.quantidade }
+      });
+
+      axios.post(`${process.env.VUE_APP_URL + "doacoes"}`, donationToServer);
+    },
+  },
   mounted() {
     this.dateFormated = format(this.donation.dia, "dd/MM/yyyy");
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.confirmation-divider {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+</style>
